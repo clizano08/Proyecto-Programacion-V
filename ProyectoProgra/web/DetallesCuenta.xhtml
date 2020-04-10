@@ -116,16 +116,12 @@
                                 <h:form>
                                     <div class="form-group">
                                         <h:outputLabel value="Nombre del Usuario"></h:outputLabel>
-                                        <h:inputText class="form-control" value = "#{detallesCuenta.usuario}" disabled="true"></h:inputText>
+                                        <h:inputText class="form-control" value = "#{detallesCuenta.nombre}" disabled="true"></h:inputText>
                                     </div>
 
                                     <div class="form-group">
                                         <h:outputLabel value="Telefono"></h:outputLabel>
                                         <h:inputText class="form-control" value = "#{detallesCuenta.telefono}" disabled="true"></h:inputText>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel value="Direccion"></h:outputLabel>
-                                        <h:inputText class="form-control" value = "#{detallesCuenta.direccion}" disabled="true"></h:inputText>
                                     </div>
                                     <div class="form-group">
                                         <h:outputLabel value="Tipo de Usuario"></h:outputLabel>
@@ -144,37 +140,35 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <h:form>
-                                        <h:inputText class="form-control" p:placeholder="Ingresa una direccion de entrega" value = "#{detallesCuenta.direccionEntrega}"></h:inputText>
-                                        <h:commandButton class="btn btn-success my-3" value="Anadir"></h:commandButton>       
-                                    </h:form>
+                                    
+                                        <h:inputText class="form-control" p:placeholder="Ingresa una direccion de entrega" value = "#{direccionBean.direccionEntrega}"></h:inputText>
+                                        <h:commandButton class="btn btn-success my-3" value="Anadir" action="#{direccionBean.insertarDireccion()}"></h:commandButton>       
+                                    
                                 </div>
-                                <table class="table table-hover table-striped table-responsive-md">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Descripcion</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="font-weight-bold">1</td>
-                                            <td>Palmares,Esquipulas, Proyecto,Josema</td>
-                                            <td><h:form><h:commandButton value="Eliminar" class="btn btn-danger"></h:commandButton></h:form></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-weight-bold">2</td>
-                                            <td>Sarchi</td>
-                                            <td><h:form><h:commandButton value="Eliminar" class="btn btn-danger"></h:commandButton></h:form></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font-weight-bold">3</td>
-                                            <td>San Jose</td>
-                                            <td><h:form><h:commandButton value="Eliminar" class="btn btn-danger"></h:commandButton></h:form></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div>
+                                    <h:dataTable value="#{direccionBean.direcciones}" var="dir" >
+                                        <h:column>    				
+                                            <f:facet name = "header">#</f:facet>
+
+                                            <h:outputText value="#{dir.id}" ></h:outputText>
+
+                                        </h:column>
+                                        <h:column>    				
+                                            <f:facet name = "header">Dirección</f:facet>
+
+                                            <h:outputText value="#{dir.direccion}"  ></h:outputText>
+
+                                        </h:column>
+                                        <h:column>    				
+                                            <f:facet name = "header">Acciones</f:facet>
+
+                                            <h:commandButton value="Eliminar"  action="#{direccionBean.eliminarDireccion(dir.id)}"></h:commandButton>
+
+                                        </h:column>
+
+
+                                </h:dataTable>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -195,4 +189,3 @@
         crossorigin="anonymous"></script>
     </h:body>
 </html>
-

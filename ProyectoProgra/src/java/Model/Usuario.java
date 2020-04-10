@@ -17,7 +17,7 @@ public class Usuario {
     String clave;
     String tipoUsuario;
     String telefono;
-
+    boolean editable;
     public Usuario() {
     }
 
@@ -32,6 +32,14 @@ public class Usuario {
 
     public String getId() {
         return id;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
     }
 
     public void setId(String id) {

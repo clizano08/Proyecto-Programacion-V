@@ -24,25 +24,28 @@
 
                         <div class="form-group">
                             <h:outputLabel value="Nombre Completo"></h:outputLabel>
-                            <h:inputText class="form-control" p:placeholder="Ingresa tu Nombre" value="#{registrateBean.usuario}"></h:inputText>
+                            <h:inputText class="form-control" p:placeholder="Ingresa tu Nombre" value="#{registrateBean.nombre}"></h:inputText>
                         </div>
 
                         <div class="form-group">
                             <h:outputLabel value="Contrasena"></h:outputLabel>
-                            <h:inputSecret class="form-control" p:placeholder="Ingresa una Contraseña" value="#{registrateBean.contrasena}" autocomplete="off"></h:inputSecret>
+                            <h:inputSecret class="form-control" p:placeholder="Ingresa una Contraseña" value="#{registrateBean.clave}" autocomplete="off"></h:inputSecret>
                         </div>
 
                         <div class="form-group">
                             <h:outputLabel value="Telefono"></h:outputLabel>
-                            <h:inputText class="form-control" p:placeholder="Ingresa un Numero de Telefono" value="#{registrateBean.numeroTelefono}"></h:inputText>
+                            <h:inputText class="form-control" p:placeholder="Ingresa un Numero de Telefono" value="#{registrateBean.telefono}"></h:inputText>
                         </div>
 
                         <div class="form-group">
                             <h:outputLabel value="Direccion"></h:outputLabel>
                             <h:inputText class="form-control" p:placeholder="Ingresa una Direccion" value="#{registrateBean.direccion}"></h:inputText>
                         </div>
+                        <div class="form-group">
+                            <h:outputLabel value="#{registrateBean.mensaje}"></h:outputLabel>  
+                        </div>
 
-                        <h:commandButton class="btn btn-primary btn-block mb-4" value="Registrarse" ></h:commandButton> 
+                        <h:commandButton class="btn btn-primary btn-block mb-4" value="Registrarse" action="#{registrateBean.insertarUsuario()}"></h:commandButton> 
                         <small class="form-text text-muted">Ya tienes una cuenta? <a href="IniciaSesion.xhtml" class="text-success">Ingresa Aqui</a></small>
                     </h:form>
                 </div>
@@ -63,4 +66,3 @@
         <!-- My own JavaScript -->
     </h:body>
 </html>
-

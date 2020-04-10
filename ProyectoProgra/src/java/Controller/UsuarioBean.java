@@ -112,7 +112,7 @@ public class UsuarioBean implements Serializable {
     
     
         public int identificadorDireccion() throws SNMPExceptions, SQLException{
-        return new UsuarioDB().SeleccionarTodosUsuario().isEmpty() ? 1: (new UsuarioDB().SeleccionarTodosUsuario().size()+1);
+        return new DireccionDB().SeleccionarTodosDireccion().isEmpty() ? 1: (new DireccionDB().SeleccionarTodosDireccion().size()+1);
     }
    //------------------------------------------------------------------------------------------------------------------------------------
        public void insertarUsuario() throws SNMPExceptions, SQLException{
@@ -197,7 +197,7 @@ public class UsuarioBean implements Serializable {
         return new UsuarioDB().SeleccionarTodosUsuarioInactivo();
     }
  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   public void activarUsuarioPorId(int id) throws SNMPExceptions, SQLException{
+   public void activarUsuarioPorID(int id) throws SNMPExceptions, SQLException{
         new UsuarioDB().ActivarUsuarioPorID(id);
         actualizarListas();
         this.mensaje="El Usuario se ha activado!";
