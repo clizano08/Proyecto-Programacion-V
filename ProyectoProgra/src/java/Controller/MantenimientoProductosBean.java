@@ -150,13 +150,13 @@ public class MantenimientoProductosBean implements Serializable {
             ProductoDB db= new ProductoDB();
             
         
-        if( prod.getId() <= 0|| prod.getNombre().equalsIgnoreCase("")|| prod.getPrecio() <= 0|| prod.getCantidad() <= 0|| prod.getCantidadMinimaVenta() <= 0 || prod.getLink().equalsIgnoreCase("") || prod.getCategoria().equalsIgnoreCase("")){
+        if( prod.getID() <= 0|| prod.getNombre().equalsIgnoreCase("")|| prod.getPrecio() <= 0|| prod.getCantidad() <= 0|| prod.getCantidadMinimaVenta() <= 0 || prod.getLink().equalsIgnoreCase("") || prod.getCategoria().equalsIgnoreCase("")){
             
             setMensaje("Ha ocurrido un error, favor verificar la integridad de los campos");
             
         }else{
             
-            if(db.SeleccionarProductoPorID(prod.getId())!= null){
+            if(db.SeleccionarProductoPorID(prod.getID())!= null){
                 db.ActualizarProducto(prod);
                 actualizarLista();
                 this.setMensaje("El Producto se ha actualizado correctamente!");

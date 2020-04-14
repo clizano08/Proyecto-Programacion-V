@@ -10,7 +10,7 @@ package Model;
  * @author carlo
  */
 public class Producto {
-    int Id;
+    int ID;
     String nombre;
     double precio;
     int cantidad;
@@ -23,7 +23,7 @@ public class Producto {
     }
 
     public Producto(int Id, String nombre, double precio, int cantidad, int cantidadMinimaVenta, String link, String categoria) {
-        this.Id = Id;
+        this.ID = Id;
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -34,6 +34,14 @@ public class Producto {
     
     public String getCategoria() {
         return categoria;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.nombre = Nombre;
     }
 
     public void setCategoria(String categoria) {
@@ -57,20 +65,12 @@ public class Producto {
         this.editable = editable;
     }
 
-    public int getId() {
-        return Id;
+    public int getID() {
+        return ID;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public double getPrecio() {

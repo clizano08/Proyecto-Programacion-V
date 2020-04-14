@@ -5,8 +5,10 @@
  */
 package Model;
 
+import DAO.SNMPExceptions;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 import javax.faces.context.FacesContext;
@@ -30,9 +32,10 @@ public class GenerarReporte {
     
  public  void verProducto(LinkedList<Producto> productos) throws JRException, IOException {
     
+     
      try { 
          File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/Producto.jasper"));
-         byte[] bytes= JasperRunManager.runReportToPdf(jasper.getPath(), null,new JRBeanCollectionDataSource(productos));
+         byte[] bytes= JasperRunManager.runReportToPdf(jasper.getPath(), null,new JRBeanCollectionDataSource(productos, false));
          //JasperPrint jp = JasperFillManager.fillReport(jasper.getPath(), null , new JRBeanCollectionDataSource(productos));
          
          HttpServletResponse response = (HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();

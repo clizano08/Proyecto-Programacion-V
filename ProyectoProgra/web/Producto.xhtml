@@ -124,7 +124,7 @@
                                     <h:column>    				
                                         <f:facet name = "header">#</f:facet>
 
-                                        <h:outputText value="#{Prod.id}" />
+                                        <h:outputText value="#{Prod.ID}" />
 
                                     </h:column>
                                     <h:column>    				
@@ -180,7 +180,7 @@
                                         </h:commandButton>
                                         <h:commandButton value="Guardar Cambios" action="#{mantenimientoProductosBean.actualizarProducto(Prod)}" rendered="#{ Prod.editable}" class="btn btn-warning mb-2"></h:commandButton>
                                         <!--<h:outputLabel value="|" rendered="#{not Prod.editable}"></h:outputLabel>-->
-                                        <h:commandButton value="Eliminar" action="#{mantenimientoProductosBean.eliminarProducto(Prod.id)}"  rendered="#{not Prod.editable}" class="btn btn-danger mb-2"></h:commandButton>
+                                        <h:commandButton value="Eliminar" action="#{mantenimientoProductosBean.eliminarProducto(Prod.ID)}"  rendered="#{not Prod.editable}" class="btn btn-danger mb-2"></h:commandButton>
 
                                     </h:column>
                                 </h:dataTable>

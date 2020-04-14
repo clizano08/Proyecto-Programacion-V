@@ -37,7 +37,7 @@ public class ProductoDB {
 
             strSQL
                     = "exec SP_InsertarProducto "
-                    + prod.getId() + ","
+                    + prod.getID() + ","
                     + "'" + prod.getNombre() + "'" + ","
                     + prod.getPrecio() + ","
                     + prod.getCantidad() + ","
@@ -67,7 +67,7 @@ public class ProductoDB {
 
             strSQL
                     = "exec SP_ActualizarProducto "
-                    + prod.getId() + ","
+                    + prod.getID() + ","
                     + "'" + prod.getNombre() + "'" + ","
                     + prod.getPrecio() + ","
                     + prod.getCantidad() + ","
@@ -123,7 +123,7 @@ public class ProductoDB {
 
             if (rsPA.next()) {
                 Producto prod = new Producto();
-                prod.Id = rsPA.getInt("Id");
+                prod.ID = rsPA.getInt("Id");
                 prod.nombre = rsPA.getString("Nombre");
                 prod.precio = rsPA.getDouble("Precio");
                 prod.cantidad = rsPA.getInt("Cantidad");
@@ -132,13 +132,13 @@ public class ProductoDB {
                 prod.categoria = rsPA.getString("Categoria");
 
 //                Producto prod = new Producto();
-//                prod.setId(rsPA.getInt("Id"));
-//                prod.setNombre(rsPA.getString("Nombre"));
-//                prod.setPrecio(rsPA.getDouble("Precio"));
-//                prod.setCantidad(rsPA.getInt("Cantidad"));
-//                prod.setCantidadMinimaVenta(rsPA.getInt("CantidadMinimaVenta"));
+//                prod.setId(rsPA.getInt("ID"));
+//                prod.setNombre(rsPA.getString("nombre"));
+//                prod.setPrecio(rsPA.getDouble("precio"));
+//                prod.setCantidad(rsPA.getInt("cantidad"));
+//                prod.setCantidadMinimaVenta(rsPA.getInt("cantidadMinimaVenta"));
 //                prod.setLink(rsPA.getString("Link"));
-//                prod.setCategoria(rsPA.getString("Categoria"));
+//                prod.setCategoria(rsPA.getString("categoria"));
                 return prod;
             }
 
@@ -173,7 +173,7 @@ public class ProductoDB {
 
             while (rsPA.next()) {
                 Producto prod = new Producto();
-                prod.Id = rsPA.getInt("Id");
+                prod.ID = rsPA.getInt("Id");
                 prod.nombre = rsPA.getString("Nombre");
                 prod.precio = rsPA.getDouble("Precio");
                 prod.cantidad = rsPA.getInt("Cantidad");
@@ -182,13 +182,13 @@ public class ProductoDB {
                 prod.categoria = rsPA.getString("Categoria");
 
 //                Producto prod = new Producto();
-//                prod.setId(rsPA.getInt("Id"));
-//                prod.setNombre(rsPA.getString("Nombre"));
-//                prod.setPrecio(rsPA.getDouble("Precio"));
-//                prod.setCantidad(rsPA.getInt("Cantidad"));
-//                prod.setCantidadMinimaVenta(rsPA.getInt("CantidadMinimaVenta"));
+//                prod.setId(rsPA.getInt("ID"));
+//                prod.setNombre(rsPA.getString("nombre"));
+//                prod.setPrecio(rsPA.getDouble("precio"));
+//                prod.setCantidad(rsPA.getInt("cantidad"));
+//                prod.setCantidadMinimaVenta(rsPA.getInt("cantidadMinimaVenta"));
 //                prod.setLink(rsPA.getString("Link"));
-//                prod.setCategoria(rsPA.getString("Categoria"));
+//                prod.setCategoria(rsPA.getString("categoria"));
 
                 listaProd.add(prod);
             }
